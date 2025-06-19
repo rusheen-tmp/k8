@@ -1,0 +1,43 @@
+/* General */
+*{box-sizing:border-box;}
+body{margin:0;font-family:Georgia,serif;background:#000;color:#fff;overflow:hidden;}
+/* Background */
+#scene{position:fixed;top:0;left:0;width:100%;height:100%;overflow:hidden;}
+#bg{width:100%;height:100%;object-fit:cover;filter:brightness(0.85);}
+/* Timer & Exit */
+#timer{position:fixed;top:15px;right:22px;font-family:"Courier New",monospace;font-size:1.4rem;color:#fff;z-index:10;}
+#exitBtn{position:fixed;top:15px;left:22px;padding:6px 14px;font-size:1rem;background:transparent;border:1px solid #d4af37;color:#d4af37;cursor:pointer;z-index:10;transition:filter .3s;}
+#exitBtn:hover{filter:drop-shadow(0 0 6px #d4af37);}
+/* Content */
+#content{position:relative;z-index:5;text-align:center;padding-top:10vh;width:100%;}
+.gold{color:#d4af37;text-shadow:0 0 10px rgba(212,175,55,.8);}
+h1{margin:0;font-size:3.5rem;letter-spacing:2px;}
+.tagline{font-size:1.2rem;margin:0 0 40px;}
+/* Chatbox */
+#chatbox{width:70%;max-width:700px;margin:0 auto;background:rgba(0,0,0,.6);border:1px solid rgba(255,255,255,.25);border-radius:6px;padding:20px;height:260px;display:flex;flex-direction:column;}
+#chatbox.large{height:420px;}
+#messages{flex:1;overflow-y:auto;font-size:1rem;text-align:left;}
+#userInput{margin-top:10px;padding:10px;background:#111;border:1px solid #444;color:#fff;border-radius:4px;}
+.nameClerk{color:#ffd54f;}
+.nameYou{color:#ffffff;}
+/* Key & Enter on landing */
+#keySection{margin-top:30px;}
+#keyButton{font-size:3rem;color:#d4af37;filter:drop-shadow(0 0 6px #d4af37);cursor:pointer;display:none;}
+#enterBtn{display:block;margin:10px auto 0;padding:10px 24px;font-size:1.1rem;border:1px solid #666;background:rgba(0,0,0,.4);color:#666;border-radius:4px;cursor:not-allowed;transition:all .35s;}
+#enterBtn.active{border-color:#d4af37;background:rgba(212,175,55,.15);color:#fff;cursor:pointer;text-shadow:0 0 6px #fff;}
+/* Modals */
+.hidden{display:none;}
+.modalOverlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.8);display:flex;align-items:center;justify-content:center;z-index:20;}
+.modalBox{background:#111;border:1px solid #d4af37;padding:20px 30px;max-width:350px;text-align:center;}
+.modalBox h3{margin-top:0;}
+.modalBox button{padding:8px 18px;margin:0 10px;border:1px solid #fff;background:transparent;color:#fff;cursor:pointer;transition:background .3s,color .3s;}
+.modalBox button:hover{background:#d4af37;color:#000;}
+/* Win modal */
+#winModal{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.8);display:flex;align-items:center;justify-content:center;z-index:25;}
+.modalContent{background:#111;border:1px solid #d4af37;border-radius:6px;padding:30px;text-align:center;max-width:400px;}
+/* Responsive */
+@media(max-width:600px){
+ h1{font-size:2.3rem;}
+ #chatbox,#chatbox.large{width:90%;}
+ #timer{font-size:1.1rem;}
+}

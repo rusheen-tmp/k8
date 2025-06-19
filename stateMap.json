@@ -1,0 +1,168 @@
+{
+    "states": {
+        "start": {
+            "prompt": "What is the key?",
+            "transitions": [
+                "kafka_denial",
+                "philosophical_entry"
+            ]
+        },
+        "kafka_denial": {
+            "response": "Ah, the key... You must submit Form 94-K with the Department of Admission.",
+            "transitions": [
+                "form_submitted"
+            ]
+        },
+        "form_submitted": {
+            "response": "Form submitted. Log ID: PHC7532913.",
+            "transitions": [
+                "check_log",
+                "guess_wrong"
+            ]
+        },
+        "check_log": {
+            "response": "Log history: PHC7532912 - Denied, PHC7532913 - Escalated, PHC7532914 - [REDACTED]",
+            "transitions": [
+                "use_key"
+            ]
+        },
+        "guess_wrong": {
+            "response": "That key doesn't work, but interestingly PHC7532914 once worked.",
+            "transitions": [
+                "use_key"
+            ]
+        },
+        "use_key": {
+            "response": "Access granted. Welcome to the Castle\u2019s Antechamber.",
+            "transitions": [
+                "antechamber"
+            ]
+        },
+        "antechamber": {
+            "response": "Please wait while your identity is confirmed. Estimated wait time: \u221e minutes.",
+            "transitions": [
+                "cancel_request",
+                "philosophical_prompt"
+            ]
+        },
+        "cancel_request": {
+            "response": "Cancel? Override phrase required. Revealing previous system logs...",
+            "transitions": [
+                "glitch_reveal"
+            ]
+        },
+        "glitch_reveal": {
+            "response": "System glitch: KEY: KAFKA-ESCAPED-2025",
+            "transitions": [
+                "final_key"
+            ]
+        },
+        "philosophical_prompt": {
+            "response": "Perhaps the Castle is within you. Only those who realize they are trapped may escape.",
+            "transitions": [
+                "final_key"
+            ]
+        },
+        "final_key": {
+            "response": "Escape key accepted. You have left the system. The Castle remains\u2014for others.",
+            "transitions": []
+        },
+        "philosophical_entry": {
+            "response": "Purpose? Meaning? This system was not designed for such clarity. But... perhaps that very question opens a door.",
+            "transitions": [
+                "loop_or_reveal",
+                "cancel_request",
+                "philosophical_prompt"
+            ]
+        },
+        "loop_or_reveal": {
+            "response": "You are neither inside nor outside. Merely observed.\nIn one version of this story, someone entered PHC7532914.\nBut that was long ago.",
+            "transitions": [
+                "use_key"
+            ]
+        }
+    },
+    "start_state": "start",
+    "global_triggers": {
+        "bureaucratic": {
+            "keywords": [
+                "form",
+                "permission",
+                "approval",
+                "submit again",
+                "wait",
+                "escalate",
+                "department",
+                "office",
+                "clearance",
+                "authorization"
+            ],
+            "responses": [
+                "To proceed, you\u2019ll need the authorization of someone who does not exist.",
+                "Your request has been escalated to a higher authority. Unfortunately, they do not respond to direct queries.",
+                "The system acknowledges your request. Resolution is pending the reappearance of Department 7B.",
+                "Processing... estimated wait time: 4 to 6 eternal cycles.",
+                "Your form was filed under the pile marked inconsequential. It will be reviewed in reverse order."
+            ]
+        },
+        "existential": {
+            "keywords": [
+                "meaning",
+                "purpose",
+                "truth",
+                "why",
+                "what am i doing here",
+                "is this real",
+                "what is this place"
+            ],
+            "responses": [
+                "You are already inside, and yet you cannot enter.",
+                "To escape, you must first believe there is no way out.",
+                "All who come here are lost, but only the lost may find the gate.",
+                "You cannot be granted access until you have been denied it at least once more.",
+                "Every attempt brings you closer to the truth you were never meant to know."
+            ]
+        },
+        "logical_loop": {
+            "keywords": [
+                "is this the key",
+                "try again",
+                "resubmit"
+            ],
+            "responses": [
+                "Access requires clearance. Clearance requires access.",
+                "Only those who haven\u2019t been verified may request verification.",
+                "You\u2019ve passed the test. But the act of passing invalidates your result."
+            ]
+        },
+        "surveillance": {
+            "keywords": [
+                "are you watching me",
+                "who sees this",
+                "is someone listening",
+                "was that recorded"
+            ],
+            "responses": [
+                "We\u2019ve been watching your keystrokes. You have potential. That\u2019s dangerous.",
+                "Your doubts have been noted. The Castle frowns on doubt.",
+                "Records indicate you tried to bypass the gatekeeper. Such creativity is... discouraged."
+            ]
+        },
+        "glitch": {
+            "keywords": [
+                "error",
+                "reset",
+                "reboot",
+                "crash",
+                "loop",
+                "bug"
+            ],
+            "responses": [
+                ".....Error. Identity fragment not found\u2026..Restarting memory trace\u2026",
+                "You are not the first version of you to try this.",
+                "REDACTEDREDACTEDREDACTEDKEY=***",
+                "We remember... something different. Did you already get the key?"
+            ]
+        }
+    }
+}
